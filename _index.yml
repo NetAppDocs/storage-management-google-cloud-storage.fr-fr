@@ -21,13 +21,13 @@ indexpage:
   - title: Plus d'informations
     links:
     - title: Documentation de Google Cloud Storage pour la gestion en dehors de la
-        console NetApp
+        NetApp Console
       url: https://cloud.google.com/storage/docs/creating-buckets
   - title: Blogs et communauté
     links:
-    - title: Console NetApp
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: Services de données NetApp
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: Communauté NetApp
       url: https://community.netapp.com/

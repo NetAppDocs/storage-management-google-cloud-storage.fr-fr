@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-add-gcp-bucket.html 
 keywords: google cloud storage buckets, google cloud storage, add buckets 
-summary: Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la console NetApp . 
+summary: Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la NetApp Console. 
 ---
 = Ajouter des buckets Google Cloud Storage
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Lorsque votre système Google Cloud Storage est disponible sur la page 
 
 
 [role="lead"]
-Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la console NetApp .
+Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la NetApp Console.
 
 .Étapes
 . Depuis la page Systèmes, double-cliquez sur le système Google Cloud Storage pour afficher la page Présentation des buckets Google Cloud Storage, puis cliquez sur *Ajouter un bucket*.
@@ -24,7 +24,7 @@ La page _Ajouter un bucket_ s'affiche.
 . Saisissez les informations requises dans la section _Détails du projet_.
 +
 ** *Nom du bucket* - Saisissez le nom que vous souhaitez utiliser pour le bucket. https://cloud.google.com/storage/docs/buckets#naming["Consultez la documentation de Google Cloud pour connaître les exigences de dénomination."^] .
-** *Projet Google* - Sélectionnez le projet Google qui sera le propriétaire du bucket.  Il peut s’agir du projet principal dans lequel l’agent de console a été déployé ou d’un projet différent.  Si vous ne voyez aucun projet supplémentaire dans la liste déroulante, cela signifie que vous n’avez pas encore associé le compte de service NetApp Console à d’autres projets.  Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet.  Ajoutez le compte de service avec le rôle de console NetApp à ce projet.  Vous devrez répéter cette étape pour chaque projet.  REMARQUE : il s’agit du compte de service que vous avez configuré pour la console NetApp , https://docs.netapp.com/us-en/console-setup-admin/task-set-up-permissions-google.html#set-up-permissions-for-the-connector["comme décrit sur cette page"^] .
+** *Projet Google* - Sélectionnez le projet Google qui sera le propriétaire du bucket.  Il peut s’agir du projet principal dans lequel l’agent de console a été déployé ou d’un projet différent.  Si vous ne voyez aucun projet supplémentaire dans la liste déroulante, cela signifie que vous n’avez pas encore associé le compte de service NetApp Console à d’autres projets.  Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet.  Ajoutez le compte de service avec le rôle de NetApp Console à ce projet. Vous devrez répéter cette étape pour chaque projet.  REMARQUE : il s’agit du compte de service que vous avez configuré pour la NetApp Console, https://docs.netapp.com/us-en/console-setup-admin/task-set-up-permissions-google.html#set-up-permissions-for-the-connector["comme décrit sur cette page"^] .
 ** *Étiquettes* - Les étiquettes sont des métadonnées pour vos ressources Google Cloud.  Vous pouvez ajouter jusqu'à 10 paires clé/valeur d'étiquette lors de la création d'un bucket. https://cloud.google.com/compute/docs/labeling-resources["Consultez la documentation de Google Cloud pour plus d'informations sur les étiquettes."^] .
 
 
