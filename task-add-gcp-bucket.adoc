@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: task-add-gcp-bucket.html 
+keywords: google cloud storage buckets, google cloud storage, add buckets 
+summary: Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la console NetApp . 
+---
+= Ajouter des buckets Google Cloud Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque votre système Google Cloud Storage est disponible sur la page Systèmes, vous pouvez ajouter des buckets supplémentaires directement depuis la console NetApp .
+
+.Étapes
+. Depuis la page Systèmes, double-cliquez sur le système Google Cloud Storage pour afficher la page Présentation des buckets Google Cloud Storage, puis cliquez sur *Ajouter un bucket*.
++
+La page _Ajouter un bucket_ s'affiche.
+
+. Saisissez les informations requises dans la section _Détails du projet_.
++
+** *Nom du bucket* - Saisissez le nom que vous souhaitez utiliser pour le bucket. https://cloud.google.com/storage/docs/buckets#naming["Consultez la documentation de Google Cloud pour connaître les exigences de dénomination."^] .
+** *Projet Google* - Sélectionnez le projet Google qui sera le propriétaire du bucket.  Il peut s’agir du projet principal dans lequel l’agent de console a été déployé ou d’un projet différent.  Si vous ne voyez aucun projet supplémentaire dans la liste déroulante, cela signifie que vous n’avez pas encore associé le compte de service NetApp Console à d’autres projets.  Accédez à la console Google Cloud, ouvrez le service IAM et sélectionnez le projet.  Ajoutez le compte de service avec le rôle de console NetApp à ce projet.  Vous devrez répéter cette étape pour chaque projet.  REMARQUE : il s’agit du compte de service que vous avez configuré pour la console NetApp , https://docs.netapp.com/us-en/console-setup-admin/task-set-up-permissions-google.html#set-up-permissions-for-the-connector["comme décrit sur cette page"^] .
+** *Étiquettes* - Les étiquettes sont des métadonnées pour vos ressources Google Cloud.  Vous pouvez ajouter jusqu'à 10 paires clé/valeur d'étiquette lors de la création d'un bucket. https://cloud.google.com/compute/docs/labeling-resources["Consultez la documentation de Google Cloud pour plus d'informations sur les étiquettes."^] .
+
+
+. Dans la section _Emplacement_, sélectionnez le type d'emplacement et la région (ou les régions) où le bucket sera créé.  Vous pouvez choisir parmi trois types d’emplacements différents.
++
+[cols="35,65"]
+|===
+| Si vous sélectionnez le « Type d'emplacement »... | Sélectionnez ensuite... 
+
+
+| Région | Une seule région du champ « Régions disponibles ». 
+
+
+| Double région  a| 
+L'emplacement géographique (un seul continent) dans le champ « Emplacements disponibles », puis sélectionnez deux régions dans le champ « Régions disponibles ».
+
+Vous pouvez activer la « réplication Turbo » si vous souhaitez garantir la géo-redondance pour tous les objets nouvellement écrits dans un délai de 15 minutes.
+
+
+
+| Multirégion | La multi-région géographique du champ « Multi-régions disponibles ». 
+|===
++
+Notez que toutes les données Cloud Storage sont redondantes sur au moins deux zones dans au moins un lieu géographique dès que vous les téléchargez. https://cloud.google.com/storage/docs/locations["Consultez la documentation Google Cloud pour plus d'informations sur les emplacements des buckets."^] .
+
+. Dans la section _Classe de stockage_, sélectionnez la classe de stockage à utiliser pour les objets de votre bucket.  Vous pouvez choisir parmi quatre classes de stockage ou sélectionner _Autoclass_ et Google ajuste la classe selon vos besoins.
++
+** *Standard* - Idéal pour les données fréquemment consultées (données « chaudes ») ou stockées pendant de brèves périodes.
+** *Nearline* - Un service de stockage à faible coût et très durable pour stocker des données rarement consultées.
+** *Coldline* - Un service de stockage très économique et très durable pour stocker des données rarement consultées.
+** *Archive* - Le service de stockage le moins cher et le plus durable pour l'archivage des données, la sauvegarde en ligne et la reprise après sinistre.
+** *Autoclass* - Transfère automatiquement les objets de votre bucket vers les classes de stockage appropriées en fonction du modèle d'accès de chaque objet.
++
+Les coûts et les frais de récupération sont différents pour chaque classe de stockage. https://cloud.google.com/storage/docs/storage-classes["Consultez la documentation de Google Cloud pour plus d'informations sur les classes de stockage."^] .
+
+
+
+. Dans la section _Protection_, choisissez si vous souhaitez utiliser des outils de protection des données pour protéger les objets du bucket ou une configuration de chiffrement des données pour protéger l'accès à vos données.
++
+*Outils de protection des données*
+
++
+** *Aucun* - Par défaut, aucun outil de protection n'est activé sur le bucket.
+** *Versionnement d'objet* - Le versionnement d'objet est un moyen de conserver plusieurs versions d'un objet dans le même compartiment.  Le bucket conserve une version d'objet non actuelle chaque fois que vous mettez à jour, remplacez ou supprimez une version d'objet active, conservant ainsi en permanence une version protégée de l'objet.  Lorsque vous sélectionnez « Versionnage d'objet », vous pouvez spécifier deux options :
++
+*** *Nombre max. de versions par objet* - Saisissez le nombre de versions non actuelles par objet qui seront créées.
+*** *Expire les versions non actuelles après* - Saisissez le nombre de jours après lequel les objets plus anciens et non actuels seront supprimés.
+
+
+** *Politique de rétention* - Une politique de rétention garantit que tous les objets actuels et futurs du bucket ne peuvent pas être supprimés ou remplacés tant qu'ils n'atteignent pas l'âge que vous définissez dans la politique de rétention.  Lorsque vous sélectionnez « Politique de conservation », vous pouvez spécifier deux options :
++
+*** *Conserver les objets pendant* - Saisissez le nombre de secondes, de jours, de mois ou d'années pendant lesquels les objets seront conservés.
+*** *Période* - Sélectionnez si la durée est en secondes, en jours, en mois ou en années.
++
+Les outils de protection de la politique de conservation et de contrôle de version des objets ne peuvent pas être activés en même temps.  Consultez la documentation de Google Cloud pour https://cloud.google.com/storage/docs/object-versioning["plus d'informations sur le contrôle de version des objets"^] , et https://cloud.google.com/storage/docs/bucket-lock["plus d'informations sur les politiques de conservation"^] .
+
+
+
+
+
++
+*Outils de cryptage de données*
+
++
+** *Clé de chiffrement gérée par Google* - Par défaut, les clés de chiffrement gérées par Google sont utilisées pour chiffrer vos données.
+** *Clé de chiffrement gérée par le client* - Vous pouvez utiliser vos propres clés gérées par le client pour le chiffrement des données au lieu d'utiliser les clés de chiffrement par défaut gérées par Google.  Si vous prévoyez d'utiliser vos propres clés gérées par le client, vous devrez déjà les avoir créées afin de pouvoir sélectionner les clés sur cette page.
++
+Les clés peuvent être dans le même projet que le bucket, ou vous pouvez sélectionner un projet différent.
+
++
+Consultez la documentation de Google Cloud pour https://cloud.google.com/storage/docs/encryption/default-keys["plus d'informations sur les clés de chiffrement gérées par Google"^] , et https://cloud.google.com/storage/docs/encryption/customer-managed-keys["plus d'informations sur les clés de chiffrement gérées par le client"^] .
+
+
+
+. Cliquez sur *Ajouter* et le bucket est créé.
+

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: task-viewing-gcp-storage.html 
+keywords: google cloud storage buckets, google cloud storage, google cloud storage working environment, system 
+summary: 'Après avoir installé un agent de console dans Google Cloud, la console NetApp peut automatiquement découvrir des informations sur les buckets Google Cloud qui résident dans le compte Google sur lequel l"agent de console est installé.  Un système de stockage Google Cloud est ajouté à la console NetApp afin que vous puissiez afficher ces informations.' 
+---
+= Afficher vos buckets Google Cloud Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Après avoir installé un agent de console dans Google Cloud, la console NetApp peut automatiquement découvrir des informations sur les buckets Google Cloud Storage qui résident dans le compte Google sur lequel l'agent de console est installé.  Un système de stockage Google Cloud est ajouté à la console afin que vous puissiez visualiser ces informations.
+
+Vous pouvez voir les détails de vos buckets Google Cloud Storage, notamment l'emplacement, l'état d'accès, la classe de stockage, la capacité totale et utilisée, et bien plus encore.  Ces buckets peuvent être utilisés comme destinations pour les opérations de sauvegarde et de récupération NetApp , de hiérarchisation du cloud NetApp ou de copie et de synchronisation NetApp .
+
+.Étapes
+. https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Installer un agent de console"^]dans le compte Google où vous souhaitez afficher vos buckets Google Cloud Storage.
+. Dans le menu de la console NetApp , sélectionnez *Stockage* puis *Gestion*.
+
+
+Vous devriez voir automatiquement un système Google Cloud Storage peu de temps après.
+
+image:screenshot-gcp-cloud-storage-we.png["Une capture d'écran d'un système de stockage Google Cloud."]
+
+. Sélectionnez le système et sélectionnez une action dans le volet de droite si vous souhaitez activer les services NetApp Console avec votre stockage Google Cloud.
++
+link:task-gcp-enable-data-services.html["Découvrez quels services NetApp Console sont disponibles et apprenez à les utiliser avec vos buckets Google Cloud Storage"] .
+
+. Sélectionnez *Entrer dans le système* ou double-cliquez sur le système pour afficher les détails des buckets de votre compte Google.
++
+En plus des colonnes qui s'affichent par défaut, vous pouvez faire défiler la page pour afficher des propriétés supplémentaires pour le bucket ; par exemple, le nombre d'étiquettes et le type de cryptage qui a été activé.
+
+
+
+.Quelle est la prochaine étape
+Vous pouvez modifier certains paramètres du bucket directement depuis la console en cliquant surimage:button-horizontal-more.gif["le bouton trois points supplémentaires"] pour un seau. link:task-change-gcp-bucket-settings.html["Cliquez ici pour plus de détails"] .
+
+Vous pouvez ajouter de nouveaux buckets en cliquant sur *Ajouter un bucket*. link:task-add-gcp-bucket.html["Cliquez ici pour plus de détails"] .

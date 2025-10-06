@@ -1,0 +1,33 @@
+---
+indexpage:
+  title: Documentation de Google Cloud Storage
+  summary: Commencez à utiliser Google Cloud Storage avec NetApp Console.
+  keywords: google cloud storage, bluexp, system, netapp console
+  lead: Commencez à utiliser Google Cloud Storage avec NetApp Console.
+  tiles:
+  - title: Commencer
+    links:
+    - title: Afficher vos buckets Google Cloud Storage
+      url: task-viewing-gcp-storage.html
+  - title: Gérer les buckets Google Cloud Storage
+    links:
+    - title: Ajouter des seaux
+      url: task-add-gcp-bucket.html
+    - title: Modifier les paramètres du bucket
+      url: task-change-gcp-bucket-settings.html
+    - title: Utiliser les services de données NetApp avec les buckets Google Cloud
+        Storage
+      url: task-gcp-enable-data-services.html
+  - title: Plus d'informations
+    links:
+    - title: Documentation de Google Cloud Storage pour la gestion en dehors de la
+        console NetApp
+      url: https://cloud.google.com/storage/docs/creating-buckets
+  - title: Blogs et communauté
+    links:
+    - title: Console NetApp
+      url: https://www.netapp.com/console
+    - title: Services de données NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Communauté NetApp
+      url: https://community.netapp.com/
